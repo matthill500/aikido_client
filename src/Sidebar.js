@@ -31,6 +31,7 @@ const drawerWidth = 240;
 const useStyles = makeStyles((theme) => ({
   root: {
     display: 'flex',
+    marginTop: '56px'
   },
   link:{
     textDecoration:'none',
@@ -45,7 +46,8 @@ const useStyles = makeStyles((theme) => ({
   },
   appBarShift: {
     width: `calc(100% - ${drawerWidth}px)`,
-    marginLeft: drawerWidth,
+    width: `100%`,
+    // marginLeft: drawerWidth,
     transition: theme.transitions.create(['margin', 'width'], {
       easing: theme.transitions.easing.easeOut,
       duration: theme.transitions.duration.enteringScreen,
@@ -124,14 +126,17 @@ const useStyles = makeStyles((theme) => ({
           >
             <MenuIcon />
           </IconButton>
-          <Typography variant="h6" noWrap>
-            FINANCE API
-          </Typography>
+          <Link to="/" style={{color: "#fff", textDecoration: 'none'}}>
+            <Typography variant="h6" noWrap >
+              FINANCE API
+            </Typography>
+          </Link>
         </Toolbar>
       </AppBar>
       <Drawer
         className={classes.drawer}
-        variant="persistent"
+        // variant="persistant"
+        onClose={handleDrawerClose}
         anchor="left"
         open={open}
         classes={{
@@ -145,10 +150,10 @@ const useStyles = makeStyles((theme) => ({
         </div>
         <Divider />
         <List>
-          {itemList.map((item) => {
+          {itemList.map((item, i) => {
             const {text, icon, link} = item;
             return(
-              <Link to={link} className={classes.link}>
+              <Link key={i} to={link} onClick={handleDrawerClose} className={classes.link}>
               <ListItem button key={text}>
                 {icon &&  <ListItemIcon >{icon}</ListItemIcon>}
                 <ListItemText primary={text} />
