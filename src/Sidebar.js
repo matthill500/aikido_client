@@ -125,7 +125,7 @@ const useStyles = makeStyles((theme) => ({
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" noWrap>
-            Aikido
+            FINANCE API
           </Typography>
         </Toolbar>
       </AppBar>
@@ -145,7 +145,7 @@ const useStyles = makeStyles((theme) => ({
         </div>
         <Divider />
         <List>
-          {itemList.map((item) =>{
+          {itemList.map((item) => {
             const {text, icon, link} = item;
             return(
               <Link to={link} className={classes.link}>

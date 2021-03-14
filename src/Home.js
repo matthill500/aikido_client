@@ -6,6 +6,8 @@ import Button from '@material-ui/core/Button';
 import Grid from '@material-ui/core/Grid';
 import Container from '@material-ui/core/Container';
 
+import { Link } from "react-router-dom";
+
 const drawerWidth = 240;
 
 const useStyles = makeStyles((theme) => ({
@@ -16,6 +18,10 @@ const useStyles = makeStyles((theme) => ({
     // necessary for content to be below app bar
     ...theme.mixins.toolbar,
     justifyContent: 'flex-end',
+  },
+  link:{
+    textDecoration:'none',
+    color:theme.palette.text.primary
   },
   content: {
     flexGrow: 1,
@@ -37,18 +43,14 @@ function Home() {
         <Container fixed style={{display:'flex', height:'100%', alignItems:'center'}}>
           <Grid container spacing={3}>
             <Grid item  xs={12} sm={6}>
-              <h2>LOREM IPSUM</h2>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, 
-                sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
-                Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris 
-                nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in 
-                reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla 
-                pariatur. It will be met with fire and fury like the world has never seen. 
-                Does everybody know that pig named Lorem Ipsum? In case you don't read Twitter, 
-                the news, or just can't get enough of The Apprentice host's legendary oration, 
-                try this Trump lorem ipsum generator on for size. A handcrafted, small-batch, 
-                artisinal pour-over version of the classic lorem ipsum generator, Hipster Ipsum 
-                will give your mocks that blue collar touch.</p>
+              <h1>DXY vs CRYPTO</h1>
+              <p>The dollar is considered strong when it rises in value against other currencies (DXY).
+                Crypto-assets are known to be inversley correlated to the performance of the DXY, as inflation fears
+                play into weakening the dollar, precious metals and recently Bitcoin, are considered as a safe
+                tactic to hedge against inflation. This is one reason Bitcoin has enjoyed an uptrend in recent times,
+                although, as investors will seek to cash out in USD, this could cause the DXY to rise while assets such as
+                gold and bitcoin will consolidate.
+              </p>
             </Grid>
             <Grid item xs={12} sm={6} >
               <lottie-player src="https://assets7.lottiefiles.com/packages/lf20_SjhGcR.json"  
@@ -59,7 +61,9 @@ function Home() {
               </lottie-player>
             </Grid>
             <Grid item  xs={12} sm={12}>
-            <Button variant="contained" color="primary" size="large">Chart</Button>
+            <Link to='/Chart' className={classes.link}>
+              <Button variant="contained" color="primary" size="large">Chart</Button>
+              </Link>
             </Grid>
           </Grid>
         </Container>
