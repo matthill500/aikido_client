@@ -1,5 +1,8 @@
+//imports
+
 import React from 'react';
 import clsx from 'clsx';
+
 import { makeStyles, useTheme } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 import Drawer from '@material-ui/core/Drawer';
@@ -18,16 +21,12 @@ import ListItemText from '@material-ui/core/ListItemText';
 import HomeIcon from '@material-ui/icons/Home';
 import BarChartIcon from '@material-ui/icons/BarChart';
 
-import { BrowserRouter as Router,
-Switch, Route, Link } from "react-router-dom";
-
-import Home from './Home.js';
-import Chart from './Chart.js';
+import { Link } from "react-router-dom";
 
 
 const drawerWidth = 240;
 
-
+//styling
 const useStyles = makeStyles((theme) => ({
   root: {
     display: 'flex',
@@ -46,7 +45,7 @@ const useStyles = makeStyles((theme) => ({
   },
   appBarShift: {
     width: `calc(100% - ${drawerWidth}px)`,
-    width: `100%`,
+    // width: `100%`,
     // marginLeft: drawerWidth,
     transition: theme.transitions.create(['margin', 'width'], {
       easing: theme.transitions.easing.easeOut,
@@ -80,8 +79,10 @@ const useStyles = makeStyles((theme) => ({
 
   function SideBar() {
 
+  //css import
   const classes = useStyles();
   const theme = useTheme();
+  //event handler hook
   const [open, setOpen] = React.useState(false);
 
 
@@ -107,7 +108,6 @@ const useStyles = makeStyles((theme) => ({
   };
 
   return (
-    <Router>
     <div className={classes.root}>
       <CssBaseline />
       <AppBar
@@ -162,16 +162,8 @@ const useStyles = makeStyles((theme) => ({
             )})}
         </List>
       </Drawer>
-      <Switch>
-        <Route exact path="/">
-          <Home />
-        </Route>
-        <Route exact path="/Chart">
-          <Chart />
-        </Route>
-      </Switch>
     </div>
-    </Router>
+
   );
 }
 

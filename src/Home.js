@@ -1,3 +1,5 @@
+//imports
+
 import React from 'react';
 import clsx from 'clsx';
 
@@ -10,8 +12,8 @@ import Container from '@material-ui/core/Container';
 
 import { Link } from "react-router-dom";
 
-const drawerWidth = 240;
 
+//styling
 const useStyles = makeStyles((theme) => ({
   drawerHeader: {
     display: 'flex',
@@ -53,7 +55,7 @@ function Home() {
           <Grid className={classes.gridContainer} container spacing={3}>
             <Grid item  xs={12} sm={6}>
               <Fade in={true}timeout={1000}>
-              <Typography variant="h1">DXY vs CRYPTO</Typography>
+              <Typography variant="h1">DXY vs BITCOIN</Typography>
               </Fade>
               <Fade in={true} timeout={1500}>
 
@@ -62,13 +64,12 @@ function Home() {
                 play into weakening the dollar, precious metals and recently Bitcoin, are considered as a safe
                 tactic to hedge against inflation. 
                 </Typography>
-</Fade>
+              </Fade>
               <Button component={Link} to='/Chart' className={classes.link} variant="contained" color="primary" size="large">Chart</Button>
 
             </Grid>
             <Grid item xs={12} sm={6} style={{display: 'flex'}} >
             <Fade in={true} timeout={2000}>
-
               <lottie-player src="https://assets7.lottiefiles.com/packages/lf20_SjhGcR.json"  
                               background="transparent"  
                               speed="1.2"  

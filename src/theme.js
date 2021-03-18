@@ -26,6 +26,7 @@
         h3: {
           fontSize: "1.6rem",
         },
+        
         body1: {
             color: "#0a0909b0"
         }
