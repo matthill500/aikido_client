@@ -86,7 +86,7 @@ function App() {
     });
   }
 
-
+//using router to allow for routing
   return (
     <Router>
     <div className="App">

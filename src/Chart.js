@@ -32,7 +32,7 @@ function Chart(props) {
 
   const init = () => {
   setLoading(true)
-  //import key from env
+  //import api_key from env
     axios.get(`https://www.alphavantage.co/query?function=DIGITAL_CURRENCY_DAILY&symbol=BTC&market=CNY&apikey=${process.env.REACT_APP_API_KEY}`)
     .then(function(response){
 
