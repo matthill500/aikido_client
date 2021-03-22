@@ -3,15 +3,15 @@
 import {createContext} from "react";
 export const CoinContext = createContext();
 
-
-
 //initial state
 export const initialState = {
     btc: null,
     error: ""
 };
 
-//use reducer modifys state
+//use reducer returns updated state
+//current state and action
+//reducer called upon dispatch function
 export const reducer = (state, action) => {
     switch (action.type) {
         case "SET_BTC": {    

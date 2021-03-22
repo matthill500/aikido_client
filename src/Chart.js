@@ -35,8 +35,9 @@ function Chart(props) {
   //import api_key from env
     axios.get(`https://www.alphavantage.co/query?function=DIGITAL_CURRENCY_DAILY&symbol=BTC&market=CNY&apikey=${process.env.REACT_APP_API_KEY}`)
     .then(function(response){
-
+        //if error dispatch set_error
         if(response.data["Note"]) {
+            //dispatch calls the reducer function
             coinContext.dispatch({
                 type: "SET_ERROR",
                 payload: {
@@ -44,6 +45,7 @@ function Chart(props) {
                 }
             });
         } else {
+            //if success dispatch set_btc
             coinContext.dispatch({
                 type: "SET_BTC",
                 payload: {

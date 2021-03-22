@@ -22,7 +22,16 @@ const axios = require('axios');
 function App() {
 
   //hooks
-  const [state, dispatch] = useReducer(reducer, initialState);
+
+  //reducer for complex state
+  const [
+    //returns state(initialstate) and dispatch(dispatch calls reducer to update state)
+    state, dispatch] = useReducer(
+    //function to perform to retrieve new state
+    reducer, 
+    //initialstate
+    initialState
+    );
 
   const [EURUSD, setEURUSD] = useState([]);
   const [USDJPY, setUSDJPY] = useState([]);
